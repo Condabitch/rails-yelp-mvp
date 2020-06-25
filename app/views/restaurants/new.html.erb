@@ -1,3 +1,16 @@
-<h1>CREATE A *NEW* RESTAURANT</h1>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-6 mx-auto'>
+      <h1>ADD A RESTAURANT</h1>
+        <%= simple_form_for @restaurant do |f| %>
+          <%= f.input :name %>
+          <%= f.input :category, collection: Restaurant::CATEGORIES %>
+          <%= f.input :address %>
+          <%= f.input :phone_number %>
+          <%= f.button :submit %>
+        <% end %>
+      <%= link_to 'Cancel', restaurants_path %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Cancel', restaurants_path %>
